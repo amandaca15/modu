@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapatoStock</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="busqueda.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Tu código de sidebar -->
+        <div class="top">
+            <div class="logo">
+                <i class="bx bxl-codepen"></i>
+                <span>ZapatoStock</span>
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        
+        <div class="user">
+            <img src="img/img.jpg" alt="yo" class="user-img">
+            <div>
+                <p class="bold">Santiago Montoya</p>
+                <p>Admin</p>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Panel</span>
+                </a>
+                <span class="tooltip">Panel</span>
+            </li>
+
+            <li>
+                <a href="Productos.html">
+                    <i class="bx bxs-shopping-bag"></i>
+                    <span class="nav-item">Productos</span>
+                </a>
+                <span class="tooltip">Productos</span>
+            </li>
+
+            <li> 
+                <a href="Ubicaciones.html">
+                    <i class='bx bx-loader'></i>
+                    <span class="nav-item">ubicaciones</span>
+                </a>
+                <span class="tooltip">ubicaciones</span>
+            </li>
+            
+
+            <li> 
+                <a href="">
+                    <i class='bx bxs-cart-alt' ></i>
+                    <span class="nav-item">Ventas</span>
+                </a>
+                <span class="tooltip">Ventas</span>
+            </li>
+
+
+            <li> 
+                <a href="Proovedores.html">
+                    <i class="bx bx-user-pin"></i>
+                    <span class="nav-item">Proovedores</span>
+                </a>
+                <span class="tooltip">Proovedores</span>
+            </li>
+
+            <li> 
+                <a href="">
+                    <i class="bx bx-body"></i>
+                    <span class="nav-item">Clientes</span>
+                </a>
+                <span class="tooltip">Clientes</span>
+            </li>
+
+            <li> 
+                <a href="">
+                    <i class='bx bxs-wallet'></i>
+                    <span class="nav-item">Cajas</span>
+                </a>
+                <span class="tooltip">Cajas</span>
+            </li>
+
+            <li> 
+                <a href="">
+                    <i class="bx bx-cog"></i>
+                    <span class="nav-item">Config</span>
+                </a>
+                <span class="tooltip">Config</span>
+            </li>
+
+            <li> 
+                <a href="">
+                    <i class="bx bx-log-out"></i>
+                    <span class="nav-item">Cerrar Sesión</span>
+                </a>
+                <span class="tooltip">Cerrar Sesión</span>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="container mt-5">
+            <h1 class="h1-busq">Búsqueda de Productos</h1>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+
+            <table class="table table-striped table-hover table-bordered tabla-redonda">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Talla</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="mostrarDetalles('1', 'Converse Chuck Taylor de lona', 'Converse de plataforma', '26', '10', '$1,999', 'img/img.jpg')" data-bs-toggle="modal" data-bs-target="#detalleModal">
+                        <th scope="row">1</th>
+                        <td>Converse Chuck Taylor de lona</td>
+                        <td>Converse de plataforma</td>
+                        <td>26</td>
+                        <td>10</td>
+                        <td>$1,999</td>
+                    </tr>
+                    <tr onclick="mostrarDetalles('2', 'Converse Chuck Taylor de lona', 'Converse de plataforma', '28', '9', '$1,999', 'img/img.jpg')" data-bs-toggle="modal" data-bs-target="#detalleModal">
+                        <th scope="row">2</th>
+                        <td>Converse Chuck Taylor de lona</td>
+                        <td>Converse de plataforma</td>
+                        <td>28</td>
+                        <td>9</td>
+                        <td>$1,999</td>
+                    </tr>
+                    <tr onclick="mostrarDetalles('3', 'Converse Chuck Taylor de lona', 'Converse de plataforma', '25', '12', '$1,999', 'img/img.jpg')" data-bs-toggle="modal" data-bs-target="#detalleModal">
+                        <th scope="row">3</th>
+                        <td>Converse Chuck Taylor de lona</td>
+                        <td>Converse de plataforma</td>
+                        <td>25</td>
+                        <td>12</td>
+                        <td>$1,999</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade " id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detalleModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>ID:</strong> <span id="modalID"></span></p>
+                    <p><strong>Nombre:</strong> <span id="modalNombre"></span></p>
+                    <p><strong>Modelo:</strong> <span id="modalModelo"></span></p>
+                    <p><strong>Talla:</strong> <span id="modalTalla"></span></p>
+                    <p><strong>Stock:</strong> <span id="modalStock"></span></p>
+                    <p><strong>Precio:</strong> <span id="modalPrecio"></span></p>
+                    <!-- Imagen del producto -->
+                    <div class="text-center">
+                        <img id="modalImagen" src="" alt="Imagen del producto" class="img-fluid" style="max-height: 200px;">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <script>
+        // Función para mostrar detalles en el modal
+        function mostrarDetalles(id, nombre, modelo, talla, stock, precio, imagenURL) {
+            document.getElementById('modalID').textContent = id;
+            document.getElementById('modalNombre').textContent = nombre;
+            document.getElementById('modalModelo').textContent = modelo;
+            document.getElementById('modalTalla').textContent = talla;
+            document.getElementById('modalStock').textContent = stock;
+            document.getElementById('modalPrecio').textContent = precio;
+            document.getElementById('modalImagen').src = imagenURL;
+        }
+
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+
+        btn.onclick = function (){
+            sidebar.classList.toggle('active');
+        };
+    </script>
+</body>
+</html>
